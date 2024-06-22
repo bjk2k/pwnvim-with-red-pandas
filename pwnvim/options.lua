@@ -171,6 +171,8 @@ M.colors_cat = function()
   vim.o.termguicolors = not SimpleUI
   vim.o.background = "dark"
 
+  require("kanagawa").load("dragon")
+
   require("catppuccin").setup({
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = {         -- :h background
@@ -289,7 +291,7 @@ M.colors_cat = function()
   if SimpleUI then
     cscheme = "ir_black"
   else
-    cscheme = "catppuccin"
+    cscheme = "kanagawa-dragon"
   end
   vim.cmd.colorscheme(cscheme)
 end

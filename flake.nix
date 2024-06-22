@@ -37,6 +37,8 @@
     onedarkpro.flake = false;
     catppuccin.url = "github:catppuccin/nvim";
     catppuccin.flake = false;
+    kanagawa.url = "github:rebelot/kanagawa.nvim";
+    kanagawa.flake = false;
   };
   outputs = inputs @ {
     self,
@@ -68,6 +70,12 @@
                   pname = "onedarkpro-nvim";
                   src = inputs.onedarkpro;
                 };
+                kanagawa-nvim = super.vimUtils.buildVimPlugin {
+                  name = "kanagawa-nvim";
+                  pname = "kanagawa-nvim";
+                  src = inputs.kanagawa;
+                };
+
                 catppuccin-nvim = super.vimUtils.buildVimPlugin {
                   name = "catppuccin-nvim";
                   pname = "catppuccin-nvim";
@@ -237,6 +245,7 @@
           # UI #################################################
           onedarkpro-nvim # colorscheme
           catppuccin-nvim # colorscheme
+          kanagawa-nvim # colorscheme
           ir_black # colorscheme for basic terminals
           #zephyr-nvim # alternate colorscheme
           telescope-nvim # da best popup fuzzy finder
